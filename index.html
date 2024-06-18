@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Todo Application</title>
+</head>
+<body>
+    <!-- Main Container -->
+    <div id="doc-container">
+        <h1>
+            Todo Application
+        </h1>
+
+        <!-- Application Container -->
+        <div id="app-container">
+            <!-- Header for adding a new task. -->
+            <h3 class="header-button" id="new-task-button">
+                Add New Task
+            </h3>
+
+            <!-- Form Container, normally hidden until a task is being created. -->
+            <form id="form-container" class="hidden">
+                <!-- Header for canceling a new task creation -->
+                <h3 class="header-button" id="form-cancel-button">
+                    Cancel
+                </h3>
+
+                <!-- Title Input -->
+                <h3><strong>Title</strong></h3>
+                <input type="text" id="form-title">
+                
+                <!-- Date Input, date takes in year, month, day, and time -->
+                <h3><strong>Date</strong></h3>
+                <input type="datetime-local" id="form-date" placeholder="Date">
+
+                <!-- Description Input -->
+                <h3><strong>Description</strong></h3>
+                <textarea id="form-description" placeholder="Enter a description..."></textarea>
+
+                <!-- Button to add the new task -->
+                <h3 class="header-button" id="alter-tasks-button">Add Task</h3>
+            </form>
+
+            <!-- Task List Container, shown by default until the user creates a new task. -->
+            <div id="list-container">
+                
+            </div>
+
+            <!-- Clear All Button, hidden by default -->
+            <h3 class="header-button hidden" id="clear-all">Clear All</h3>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
