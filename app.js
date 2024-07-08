@@ -7,6 +7,7 @@ const formTaskButton = document.getElementById('alter-tasks-button');
 const formCancelButton = document.getElementById('form-cancel-button');
 const clearAllTasksButton = document.getElementById('clear-all');
 
+const formContainerElement = document.getElementById('form-container');
 const formTitleInput = document.getElementById('form-title');
 const formDateInput = document.getElementById('form-date');
 const formDescriptionInput = document.getElementById('form-description');
@@ -20,7 +21,7 @@ if (taskData.length) {
 }
 
 // Rewrites the date into an easier to read format.
-// // Parameter is to a date that will be converted.
+// // Parameter is a date that will be converted.
 function formatDate(date) {
     let newDate = new Date(date)
     return `${newDate.toDateString()} ${newDate.toLocaleTimeString()}`;
@@ -127,14 +128,14 @@ function loadTaskButtonEvents() {
             // This event calls the method to preload the user inputs on the formContainer with the values 
             // in the respective task, and it passes in the id of the parent container.
             button.addEventListener('click', () => {
-                preloadTask(button.parentElement.getAttribute('id'));
+                preloadTask(button.parentElement.parentElement.getAttribute('id'));
             }, {once:true});
         } else {
             // If not, adds an eventListener that will activate once the element is clicked by the user.
             // This event calls the method to remove the task from the taskData array object, and it passes
             // in the id of the parent container.
             button.addEventListener('click', () => {
-                removeTask(button.parentElement.getAttribute('id'));
+                removeTask(button.parentElement.parentElement.getAttribute('id'));
             }, {once:true});
         }
     }
@@ -298,6 +299,11 @@ function loadDefaultEventListeners() {
 
     // Initializes the evenListener for clearing all of the tasks from the taskData array.
     clearAllTasksButton.addEventListener('click', clearAllTasks)
+
+    // Initializes the eventListener for the formContainerElement to prevent a webpage reload if the submit event occurs.
+    formContainerElement.addEventListener('submit', (e) => {
+        e.preventDefault();
+    })
 }
 
 loadDefaultEventListeners();

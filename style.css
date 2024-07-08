@@ -63,19 +63,17 @@ textarea {
 }
 
 #list-container, #form-container {
-    height: 50vh;
+    height: 60vh;
     max-height: 500px;
+    min-height: 350px;
+    overflow-x: hidden;
     background-color: #3e2a3546;
     box-shadow: #3e2a3546 0px 0px 10px 10px;
     width: 50vw;
     min-width: 200px;
-}
-
-#list-container {
-    overflow-y: scroll;
+    overflow-y: auto;
     scrollbar-color: #D7BBA8 #E26D5A;
 }
-
 
 .hidden{
     display: none;
@@ -89,6 +87,7 @@ textarea {
 
 #form-container {
     text-align: center;
+
 }
 
 .task {
