@@ -9,6 +9,13 @@ body {
     color: #3E2A35;
 }
 
+#watermark {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    font-size: 12px;
+}
+
 input, textarea{
     background-color: #D7BBA8;
     color: #3E2A35;
